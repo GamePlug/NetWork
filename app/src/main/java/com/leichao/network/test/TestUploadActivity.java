@@ -1,6 +1,5 @@
 package com.leichao.network.test;
 
-import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -74,7 +73,7 @@ public class TestUploadActivity extends BaseActivity {
                                 + "---done" + done);
                     }
                 }));*/
-        final File file2 = new File(DownLoadConfig.DOWN_LOAD_DIR, "image03.jpg");;
+        final File file2 = new File(DownLoadConfig.DOWN_LOAD_DIR, "image03.jpg");
         list.add(new RetrofitUpload.UploadBean(
                 "image[]",
                 file2,
