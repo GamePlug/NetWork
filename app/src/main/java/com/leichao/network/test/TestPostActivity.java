@@ -53,7 +53,7 @@ public class TestPostActivity extends BaseActivity {
         result.setText("请求中");
         new RetrofitManager.Creator()
                 .create(Api.class)
-                .testPost(2,1,"didi")
+                .testPost("1", "1")
                 .enqueue(new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {

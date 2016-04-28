@@ -18,7 +18,7 @@ public class NetConfig {
      * Retrofit默认网络请求的地址
      * Retrofit默认网络请求的数据解析工厂
      */
-    public static final String DEFAULT_BASEURL = "http://gank.io/";
+    public static final String DEFAULT_BASEURL = "http://www.didi365.com/";
     public static final Converter.Factory DEFAULT_FACTORY = ScalarsConverterFactory.create();
 
 

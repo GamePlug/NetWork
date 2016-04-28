@@ -6,6 +6,7 @@ import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
@@ -14,6 +15,7 @@ import retrofit2.http.Part;
 import retrofit2.http.PartMap;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 import retrofit2.http.Streaming;
 
 /**
@@ -23,28 +25,37 @@ import retrofit2.http.Streaming;
 public interface Api {
     //------------- get请求 ----------------//
 
-    @GET("api/data/福利/{pageCount}/{pageIndex}")
+    @GET("Gold/note/getLists")
     Call<String> testGet(
-            @Path("pageCount") int pageCount,
-            @Path("pageIndex") int pageIndex,
-            @Query("who") String who
+            @Query("type") String type,
+            @Query("page") String page
+    );
+
+    @GET("Gold/{what}/getLists")
+    Call<String> testGet(
+            @Path("what") String what,
+            @QueryMap Map<String, String> whos
     );
 
 
     //------------- post请求 ----------------//
 
-    @POST("api/data/福利/{pageCount}/{pageIndex}")
+    @POST("Gold/note/getLists")
     Call<String> testPost(
-            @Path("pageCount") int pageCount,
-            @Path("pageIndex") int pageIndex
+
     );
 
     @FormUrlEncoded
-    @POST("api/data/福利/{pageCount}/{pageIndex}")
+    @POST("Gold/note/getLists")
     Call<String> testPost(
-            @Path("pageCount") int pageCount,
-            @Path("pageIndex") int pageIndex,
-            @Field("who") String who
+            @Field("type") String type,
+            @Field("page") String page
+    );
+
+    @FormUrlEncoded
+    @POST("Gold/note/getLists")
+    Call<String> testPost(
+            @FieldMap Map<String, String> whos
     );
 
 
@@ -56,10 +67,9 @@ public interface Api {
             @Path("fileName") String fileName
     );
 
-    @POST("http://srctest.didi365.com/didi365/Upload/app/{fileName}")
+    @POST("http://srctest.didi365.com/didi365/Upload/app/ShenMaDiDiClient2.0.91.0.apk")
     @Streaming
     Call<ResponseBody> testPostDownload(
-            @Path("fileName") String fileName
     );
 
 
@@ -70,5 +80,21 @@ public interface Api {
     Call<String> testUpload(
             @Part("who") String who,
             @PartMap Map<String, RequestBody> params
+    );
+
+
+    //------------- 直接解析为对象 ----------------//
+
+    @FormUrlEncoded
+    @POST("http://www.didi365.com/Gold/note/getLists")
+    Call<NoteBean> testGson(
+            @Field("type") String type,
+            @Field("page") String page
+    );
+
+    @FormUrlEncoded
+    @POST("http://www.didi365.com/Gold/note/getLists")
+    Call<NoteBean> testGson(
+            @FieldMap Map<String, String> params
     );
 }
