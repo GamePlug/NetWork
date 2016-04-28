@@ -29,7 +29,7 @@ public class ClientForGlide {
      */
     private OkHttpClient get() {
 
-        return ClientBuilder.getBuilder()
+        return ClientBuild.getClient().newBuilder()
                 .addInterceptor(new Interceptor() {
                     @Override
                     public Response intercept(Chain chain) throws IOException {

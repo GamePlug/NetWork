@@ -48,7 +48,7 @@ public class ClientForRetrofit {
      * 设置Retrofit所用OkHttp的一些参数
      */
     private OkHttpClient get() {
-        return ClientBuilder.getBuilder()
+        return ClientBuild.getClient().newBuilder()
                 .addInterceptor(new Interceptor() {
                     @Override
                     public Response intercept(Chain chain) throws IOException {

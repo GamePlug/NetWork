@@ -32,10 +32,10 @@ public class MainActivity extends BaseActivity {
     public void initData() {
         listBean = new ArrayList<>();
 
-        listBean.add(new MyBean(MainActivity.class, "普通get请求"));
-        listBean.add(new MyBean(MainActivity.class, "普通get请求"));
-        listBean.add(new MyBean(MainActivity.class, "普通get请求"));
-        listBean.add(new MyBean(MainActivity.class, "普通get请求"));
+        listBean.add(new MyBean(TestGetActivity.class, "GET请求"));
+        listBean.add(new MyBean(TestPostActivity.class, "POST请求"));
+        listBean.add(new MyBean(TestDownloadActivity.class, "下载请求"));
+        listBean.add(new MyBean(TestUploadActivity.class, "上传请求"));
 
         listView.setAdapter(new MyAdapter());
     }
