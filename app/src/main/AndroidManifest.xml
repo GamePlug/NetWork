@@ -32,6 +32,8 @@
 
         <activity android:name=".test.TestGsonActivity"/>
 
+        <activity android:name=".test.TestHttpsActivity"/>
+
     </application>
 
 </manifest>

@@ -37,6 +37,7 @@ public class MainActivity extends BaseActivity {
         listBean.add(new MyBean(TestDownloadActivity.class, "下载请求"));
         listBean.add(new MyBean(TestUploadActivity.class, "上传请求"));
         listBean.add(new MyBean(TestGsonActivity.class, "自动解析"));
+        listBean.add(new MyBean(TestHttpsActivity.class, "Https请求"));
 
         listView.setAdapter(new MyAdapter());
     }

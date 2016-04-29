@@ -97,4 +97,9 @@ public interface Api {
     Call<NoteBean> testGson(
             @FieldMap Map<String, String> params
     );
+
+
+    //------------- https证书 ----------------//
+    @GET("https://kyfw.12306.cn/otn/")
+    Call<String> testHttps();
 }
