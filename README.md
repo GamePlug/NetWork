@@ -5,4 +5,4 @@ OkHttp相关的Demo,包括（Retrofit和Glide)
 
 [MulaAppLink](https://app.mulacar.cn)
 
-[chacktok](chacktok://app?mac=202201220134)
+[chacktok](http://chacktok?mac=202201220134)
